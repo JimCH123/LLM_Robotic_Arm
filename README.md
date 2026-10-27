@@ -4,7 +4,8 @@ An LLM agent that will sort objects with a simulated SO-101 robot arm in MuJoCo 
 
 This repository contains the first stage: the simulation and the robot skills that the agent will call as tools.
 
-<!-- DEMO VIDEO: on github.com, edit this file and drag outputs/demo.mp4 onto this line. -->
+
+https://github.com/user-attachments/assets/51267cb8-f907-4ddc-a46d-d0f890c2f133ne. 
 
 *The arm picks the red and blue cubes and places each in its bin. Every step is checked against the simulator's ground truth.*
 
