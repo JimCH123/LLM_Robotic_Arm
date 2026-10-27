@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets — keep keys in .env only
+.env
+.env.*
+!.env.example
+
+# Third-party assets fetched by scripts (not committed)
+third_party/
+
+# Run outputs, videos, logs, datasets, model weights
+outputs/
+runs/
+*.mp4
+*.gif
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+MUJOCO_LOG.TXT
+
+# Vector store / memory files created at runtime
+*.sqlite3
+chroma/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

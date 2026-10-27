@@ -1,0 +1,16 @@
+[project]
+name = "llm_robotics_project"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "mujoco>=3.3",
+    "langchain-openai>=1.7",
+    "python-dotenv>=1.0",
+    "imageio[ffmpeg]>=2.38.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

@@ -1,0 +1,53 @@
+<mujoco model="so101_tabletop">
+    <option integrator="implicitfast" timestep="0.005" cone="elliptic" iterations="10" ls_iterations="20" impratio="10"/>
+
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+        <model name="so101" file="../third_party/mujoco_menagerie/robotstudio_so101/so101.xml"/>
+        <texture type="2d" name="grid" builtin="checker" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" width="300" height="300"/>
+        <material name="grid" texture="grid" texrepeat="5 5" reflectance="0.2"/>
+    </asset>
+
+    <visual>
+        <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+        <global azimuth="160" elevation="-30"/>
+    </visual>
+
+    <worldbody>
+        <light pos="0 0 2" dir="0 0 -1" directional="true"/>
+        <geom name="table" type="plane" size="0 0 0.05" material="grid"/>
+        <attach model="so101" body="base" prefix=""/>
+
+        <body name="red_cube" pos="0.25 -0.06 0.015">
+            <freejoint name="red_cube"/>
+            <geom type="box" size="0.015 0.015 0.015" mass="0.05" rgba="0.9 0.1 0.1 1" friction="1 0.03 0.003"/>
+        </body>
+
+        <body name="green_cube" pos="0.25 0 0.015">
+            <freejoint name="green_cube"/>
+            <geom type="box" size="0.015 0.015 0.015" mass="0.05" rgba="0.1 0.8 0.1 1" friction="1 0.03 0.003"/>
+        </body>
+
+        <body name="blue_cube" pos="0.25 0.06 0.015">
+            <freejoint name="blue_cube"/>
+            <geom type="box" size="0.015 0.015 0.015" mass="0.05" rgba="0.1 0.2 0.9 1" friction="1 0.03 0.003"/>
+        </body>
+
+        <body name="left_bin" pos="0.18 0.18 0">
+            <geom type="box" size="0.04 0.04 0.002" pos="0 0 0.002" rgba="0.6 0.6 0.6 1"/>
+            <geom type="box" size="0.04 0.003 0.015" pos="0 0.037 0.015" rgba="0.6 0.6 0.6 1"/>
+            <geom type="box" size="0.04 0.003 0.015" pos="0 -0.037 0.015" rgba="0.6 0.6 0.6 1"/>
+            <geom type="box" size="0.003 0.04 0.015" pos="0.037 0 0.015" rgba="0.6 0.6 0.6 1"/>
+            <geom type="box" size="0.003 0.04 0.015" pos="-0.037 0 0.015" rgba="0.6 0.6 0.6 1"/>
+        </body>
+
+        <body name="right_bin" pos="0.18 -0.18 0">
+            <geom type="box" size="0.04 0.04 0.002" pos="0 0 0.002" rgba="0.6 0.6 0.6 1"/>
+            <geom type="box" size="0.04 0.003 0.015" pos="0 0.037 0.015" rgba="0.6 0.6 0.6 1"/>
+            <geom type="box" size="0.04 0.003 0.015" pos="0 -0.037 0.015" rgba="0.6 0.6 0.6 1"/>
+            <geom type="box" size="0.003 0.04 0.015" pos="0.037 0 0.015" rgba="0.6 0.6 0.6 1"/>
+            <geom type="box" size="0.003 0.04 0.015" pos="-0.037 0 0.015" rgba="0.6 0.6 0.6 1"/>
+        </body>
+    </worldbody>
+
+</mujoco>
